@@ -29,7 +29,7 @@ class HomeLayout extends StatelessWidget
         builder: (controller)
         {
 
-          // AppCubit cubit = AppCubit.get(context);
+
          return Scaffold(
             key:scaffoldKey,
             appBar: AppBar(
@@ -49,25 +49,6 @@ class HomeLayout extends StatelessWidget
                         title:titleController.text,
                         time: timeController.text,
                         date: dateController.text);
-
-                    // insertDatabase(
-                    //   date:dateController.text ,
-                    //   time:timeController.text ,
-                    //   title:titleController.text,
-                    // ).then((value)
-                    // {
-                    //   getDataFromDatabase(database).then((value)
-                    //   {
-                    //     Navigator.pop(context);
-                    //     // setState(() {
-                    //     //   isBottomShowDown=false;
-                    //     //   fabIcon=Icons.edit;
-                    //     //   tasks=value;
-                    //     //   print(tasks);
-                    //     // });
-                    //   });
-                    //
-                    // });
                   }
                 }
                 else{
@@ -179,9 +160,6 @@ class HomeLayout extends StatelessWidget
               currentIndex: controller.currentIndex,
               onTap: (index){
                 controller.changeIndex(index);
-                // setState(() {
-                //   currentIndex=index;
-                // });
               },
               items:controller.bottomItems!,
             ) ,
@@ -192,9 +170,6 @@ class HomeLayout extends StatelessWidget
       );
 
   }
-  //Future<String> getName()async {
-  // return "ahmed omar";
-  // }
 
   }
 

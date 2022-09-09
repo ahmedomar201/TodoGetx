@@ -57,12 +57,10 @@ class AppController extends GetxController {
     isBottomShowDown= isShow;
     fabIcon= icon;
     update();
-    // emit(AppChangeBottomSheetState());
 
   }
   void changeIndex(index) {
     currentIndex = index;
-    // emit(AppChangeBottomNavBarState());
     update();
 
   }
@@ -88,7 +86,6 @@ class AppController extends GetxController {
     {
       update();
       database=value;
-      // emit(AppCreateDatabaseState());
     });
   }
 
@@ -102,7 +99,6 @@ class AppController extends GetxController {
           "insert into Tasks(time,status,date,title)VAlUES('$time','new','$date','$title')").
       then((value){
         print(" $value insert is successfully");
-        // emit(AppInsertDatabaseState());
         update();
         getDataFromDatabase(database);
 
@@ -119,7 +115,6 @@ class AppController extends GetxController {
     newTasks=[];
     doneTasks=[];
     archivedTasks=[];
-    // emit(AppGetDatabaseLoadingState());
     update();
     database.rawQuery('SELECT * FROM tasks').then((value)
     {
@@ -132,7 +127,6 @@ class AppController extends GetxController {
           doneTasks!.add(element);
         else archivedTasks!.add(element);
       });
-      // emit(AppGetDatabaseState());
 
     });
   }
@@ -146,7 +140,6 @@ class AppController extends GetxController {
 
     ).then((value){print('Update');
     update();
-    // emit(AppUpdateDatabaseState());
     getDataFromDatabase(database);
     });
   }
@@ -157,7 +150,6 @@ class AppController extends GetxController {
     ).then((value){
       print('deleted');
       update();
-      // emit(AppDeleteDatabaseState());
       getDataFromDatabase(database);
     });
   }
