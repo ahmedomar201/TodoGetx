@@ -18,18 +18,12 @@ class HomeLayout extends StatelessWidget
   Widget build(BuildContext context) {
     return  GetBuilder<AppController>(
       init: controller..createDatabase(),
-      // create:(context)=>AppCubit()..createDatabase(),
 
-        // listener:(context,state)
-        // {
-        //   if(state is AppInsertDatabaseState){
+        //   if(state is AppInsertDatabase){
         //     Navigator.pop(context);
-        //   }
-        // },
+
         builder: (controller)
         {
-
-
          return Scaffold(
             key:scaffoldKey,
             appBar: AppBar(
@@ -49,6 +43,7 @@ class HomeLayout extends StatelessWidget
                         title:titleController.text,
                         time: timeController.text,
                         date: dateController.text);
+                    Navigator.pop(context);
                   }
                 }
                 else{
