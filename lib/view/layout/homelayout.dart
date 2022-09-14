@@ -19,9 +19,7 @@ class HomeLayout extends StatelessWidget
     return  GetBuilder<AppController>(
       init: controller..createDatabase(),
 
-        //   if(state is AppInsertDatabase){
-        //     Navigator.pop(context);
-
+    
         builder: (controller)
         {
          return Scaffold(
